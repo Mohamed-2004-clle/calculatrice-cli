@@ -1,0 +1,14 @@
+# Maven : résultats de build
+target/
+
+# IDE
+.vscode/
+.idea/
+*.iml
+.classpath
+.project
+.settings/
+
+# Système
+Thumbs.db
+.DS_Store
