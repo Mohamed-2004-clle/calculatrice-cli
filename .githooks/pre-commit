@@ -1,0 +1,15 @@
+#!/bin/sh
+# Hook pre-commit : bloque le commit si la validation échoue.
+
+echo "[pre-commit] Validation en cours : mvn -B clean verify ..."
+
+mvn -B -q clean verify
+status=$?
+
+if [ $status -ne 0 ]; then
+  echo "[pre-commit] ECHEC : compilation, tests ou Checkstyle. Commit interrompu."
+  exit 1
+fi
+
+echo "[pre-commit] OK : commit autorisé."
+exit 0

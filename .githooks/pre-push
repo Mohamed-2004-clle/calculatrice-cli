@@ -1,0 +1,15 @@
+#!/bin/sh
+# Hook pre-push : seconde vérification avant publication sur GitHub.
+
+echo "[pre-push] Validation avant envoi : mvn -B clean verify ..."
+
+mvn -B -q clean verify
+status=$?
+
+if [ $status -ne 0 ]; then
+  echo "[pre-push] ECHEC : le projet ne passe plus les contrôles. Push interrompu."
+  exit 1
+fi
+
+echo "[pre-push] OK : push autorisé."
+exit 0
