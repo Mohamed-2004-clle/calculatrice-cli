@@ -46,7 +46,7 @@ public final class Main {
 
     private static void afficherMenu() {
         System.out.println();
-        System.out.println("===== CALCULATRICE =====");
+                System.out.println("===== CALCULATRICE v1.0 =====");
         System.out.println("1. Addition");
         System.out.println("2. Soustraction");
         System.out.println("0. Quitter");
